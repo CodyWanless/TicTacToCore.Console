@@ -7,6 +7,9 @@
 
   <ItemGroup>
     <Folder Include="DependentAssemblies\" />
+    <Folder Include="Game\" />
+    <Folder Include="Game\Player\" />
+    <Folder Include="Game\Strategy\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Common.Model">

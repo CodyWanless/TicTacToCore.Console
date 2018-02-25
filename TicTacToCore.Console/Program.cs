@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Common.Model;
 
 namespace TicTacToCore.Console
@@ -7,7 +8,7 @@ namespace TicTacToCore.Console
 	{
 		public static void Main(string[] args)
 		{
-			System.Console.WriteLine("Hello World!");
+			Game.StartGame().Wait();
 		}
 	}
 }
