@@ -13,7 +13,7 @@ namespace TicTacToCore.Console
 			this.strategy = strategy;
 		}
 
-		public Task PlayTurn(GameBoard gameBoard)
+		public Task PlayTurn(IGameBoard gameBoard)
 		{
 			return strategy.PlayTurn(gameBoard, this.mark);
 		}

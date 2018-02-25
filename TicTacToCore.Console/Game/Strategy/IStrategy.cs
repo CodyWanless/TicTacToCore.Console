@@ -5,6 +5,6 @@ namespace TicTacToCore.Console
 {
 	public interface IStrategy
 	{
-		Task PlayTurn(GameBoard gameBoard, Mark mark);
+		Task PlayTurn(IGameBoard gameBoard, Mark mark);
 	}
 }

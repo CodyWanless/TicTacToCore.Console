@@ -27,12 +27,10 @@ namespace TicTacToCore.Console
 
 				await currentPlayer.PlayTurn(gameBoard);
 				turnCounter++;
-			} while (!GameOver());
+			} while (!GameOver(gameBoard));
 		}
 
-		private static bool GameOver()
-		{
-			return false;
-		}
+		private static bool GameOver(IGameBoard gameBoard) =>
+			WinHelper.IsWinningMove(gameBoard);
 	}
 }

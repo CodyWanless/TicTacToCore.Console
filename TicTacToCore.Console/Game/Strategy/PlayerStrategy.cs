@@ -5,7 +5,7 @@ namespace TicTacToCore.Console
 {
 	internal sealed class PlayerStrategy : IStrategy
 	{
-		public Task PlayTurn(GameBoard gameBoard, Mark mark)
+		public Task PlayTurn(IGameBoard gameBoard, Mark mark)
 		{
 			bool validChoice = false;
 			do

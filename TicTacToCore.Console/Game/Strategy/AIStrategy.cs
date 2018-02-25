@@ -9,6 +9,6 @@ namespace TicTacToCore.Console
 		{
 		}
 
-		public Task PlayTurn(GameBoard gameBoard, Mark mark) => Task.FromResult(0);
+		public Task PlayTurn(IGameBoard gameBoard, Mark mark) => Task.FromResult(0);
 	}
 }

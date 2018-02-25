@@ -4,9 +4,11 @@ using System;
 
 namespace TicTacToCore.Console
 {
-	public sealed class GameBoard
+	internal sealed class GameBoard : IGameBoard
 	{
 		private readonly Mark?[] marks;
+
+		public IEnumerable<Mark?> Marks => marks;
 
 		public GameBoard()
 		{
