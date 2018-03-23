@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{7EB7384C-0E3A-426F-AE43-399563C287AE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicTacToCore.Console Status">
+    <Files>
+      <File FileName="TicTacToCore.Console Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TicTacToCore.Console PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

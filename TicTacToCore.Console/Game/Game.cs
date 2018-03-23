@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToCore.Console
 {
-	public class Game
+	public static class Game
 	{
 		public static async Task StartGame()
 		{
@@ -26,11 +26,27 @@ namespace TicTacToCore.Console
 				}
 
 				await currentPlayer.PlayTurn(gameBoard);
-				turnCounter++;
-			} while (!GameOver(gameBoard));
+			} while (!GameOver(gameBoard, () => turnCounter++));
+
+			if (turnCounter % 2 == 0)
+			{
+				System.Console.WriteLine("Player wins!");
+			}
+			else
+			{
+				System.Console.WriteLine("AI wins!");
+			}
 		}
 
-		private static bool GameOver(IGameBoard gameBoard) =>
-			WinHelper.IsWinningMove(gameBoard);
+		private static bool GameOver(IGameBoard gameBoard, Action nextTurnAction)
+		{
+			if (WinHelper.IsWinningMove(gameBoard))
+			{
+				return true;
+			}
+
+			nextTurnAction?.Invoke();
+			return false;
+		}
 	}
 }

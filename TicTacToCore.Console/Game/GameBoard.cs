@@ -7,14 +7,24 @@ namespace TicTacToCore.Console
 	internal sealed class GameBoard : IGameBoard
 	{
 		private readonly Mark?[] marks;
-
 		public IEnumerable<Mark?> Marks => marks;
+		public bool HasMovesLeft => this.marks.Any(m => !m.HasValue);
 
 		public GameBoard()
 		{
 			this.marks = Enumerable.Range(0, 9)
 				.Select(_ => (Mark?)null)
-				.ToArray<Mark?>();
+				.ToArray();
+		}
+
+		public IReadOnlyList<int> GetOpenLocations()
+		{
+			return this.marks.Select((m, i) =>
+				  new
+				  {
+					  IsEmpty = !m.HasValue,
+					  Index = i
+				  }).Where(x => x.IsEmpty).Select(x => x.Index).ToList();
 		}
 
 		public void PlaceChoice(Mark mark, int location)
@@ -25,6 +35,16 @@ namespace TicTacToCore.Console
 			}
 
 			this.marks[location] = mark;
+		}
+
+		public void RemoveChoice(Mark mark, int location)
+		{
+			if (marks[location] != mark)
+			{
+				throw new ArgumentException(nameof(location));
+			}
+
+			this.marks[location] = null;
 		}
 
 		public void Draw()

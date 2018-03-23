@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace TicTacToCore.Console
 {
-	public sealed class WinHelper
+	public static class WinHelper
 	{
 		public static bool IsWinningMove(IGameBoard gameBoard)
 		{

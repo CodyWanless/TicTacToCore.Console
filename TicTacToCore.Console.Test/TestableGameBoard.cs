@@ -20,6 +20,8 @@ namespace TicTacToCore.Console.Test
 			}
 		}
 
+		public bool HasMovesLeft => throw new NotImplementedException();
+
 		public TestableGameBoard()
 		{
 			this.marks = Enumerable.Range(0, 9).Select(_ => (Mark?)null).ToArray();
@@ -33,6 +35,16 @@ namespace TicTacToCore.Console.Test
 		public void PlaceChoice(Mark mark, int location)
 		{
 			marks[location] = mark;
+		}
+
+		public void RemoveChoice(Mark mark, int location)
+		{
+			throw new NotImplementedException();
+		}
+
+		public IReadOnlyList<int> GetOpenLocations()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
